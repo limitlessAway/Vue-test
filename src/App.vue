@@ -3,7 +3,7 @@
     <h3>Documets</h3>
     <v-treeview activatable :items="items" :open-on-click="true"></v-treeview>
     <CreateTheme></CreateTheme>
-    <MyComponent></MyComponent>
+    <!-- <MyComponent></MyComponent> -->
   </div>
 </template>
 

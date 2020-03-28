@@ -1,4 +1,9 @@
-export default {
+import Vue from "vue";
+import Vuex from "vuex";
+
+Vue.use(Vuex);
+
+export default new Vuex.Store({
   state: {
     items: [
       {
@@ -29,9 +34,9 @@ export default {
         id: 15,
         name: "Theme 3",
         children: [
-          { id: 16, name: 'Doc 6' },
-          { id: 17, name: 'Doc 7' },
-          { id: 18, name: 'Doc 8' },
+          { id: 16, name: "Doc 6" },
+          { id: 17, name: "Doc 7" },
+          { id: 18, name: "Doc 8" },
         ],
       },
     ]
@@ -46,4 +51,4 @@ export default {
       return state.items;
     }
   },
-};
+});
