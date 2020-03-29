@@ -1,5 +1,4 @@
 <template>
-  <v-app>
     <v-row justify="center">
       <v-dialog v-model="dialog" persistent max-width="400px">
         <template v-slot:activator="{ on }">
@@ -26,7 +25,6 @@
         </v-card>
       </v-dialog>
     </v-row>
-  </v-app>
 </template>
 
 <script lang="ts">
@@ -45,14 +43,14 @@ export default class CreateTheme extends Vue {
   public createTheme!: MutationMethod;
   public httpClient: AxiosStatic = Axios;
 
-  public async confirm(): Promise<void> {
+  public confirm(): void {
     this.createTheme({
       name: this.themeTitle,
       id: 99
     });
     this.themeTitle = "";
     this.dialog = false;
-    await this.httpClient.get("https://api.coindesk.com/v1/bpi/currentprice.json");
+    // this.httpClient.get("https://api.coindesk.com/v1/bpi/currentprice.json");
   }
 }
 // import { mapMutations } from "vuex";

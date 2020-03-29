@@ -1,9 +1,11 @@
 <template>
+<v-app>
   <div class="all">
     <h3>Documets</h3>
     <v-treeview activatable :items="items" :open-on-click="true"></v-treeview>
     <CreateTheme></CreateTheme>
   </div>
+  </v-app>
 </template>
 
 <script lang="ts">
