@@ -6,9 +6,9 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { mapGetters } from "vuex";
-import CreateTheme from "./components/CreateTheme";
+import CreateTheme from "./components/CreateTheme.vue";
 
 export default {
   computed: mapGetters(["items"]),

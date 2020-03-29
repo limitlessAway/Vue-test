@@ -33,6 +33,8 @@
 import { mapMutations, MutationMethod } from "vuex";
 import Component from "vue-class-component";
 import Vue from "vue";
+import { AxiosStatic } from "axios";
+import Axios from "axios";
 
 @Component({
   methods: mapMutations(["createTheme"])
@@ -41,14 +43,16 @@ export default class CreateTheme extends Vue {
   public dialog: boolean = false;
   public themeTitle: string = "";
   public createTheme!: MutationMethod;
+  public httpClient: AxiosStatic = Axios;
 
-  public confirm(): void {
+  public async confirm(): Promise<void> {
     this.createTheme({
       name: this.themeTitle,
       id: 99
     });
     this.themeTitle = "";
     this.dialog = false;
+    await this.httpClient.get("https://api.coindesk.com/v1/bpi/currentprice.json");
   }
 }
 // import { mapMutations } from "vuex";
